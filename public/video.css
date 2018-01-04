@@ -1,0 +1,280 @@
+/* 全局*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+  text-decoration: none;
+  transition: all .625s ease;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  overflow: hidden;
+}
+
+
+/* 视频盒子 */
+
+#video-box {
+  width: 960px;
+}
+
+#video-box:hover #video-controller {
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* 视频控制条 */
+
+#video-controller {
+  /* transform:translate3d(0,100%,0); */
+  position: absolute;
+  padding: 0 20px 0 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+
+/* video标签  */
+
+#video {
+  display: block;
+  width: 100%;
+}
+
+
+/* 播放列表 */
+
+#play-list {
+  position: absolute;
+  background: red;
+  top: 0;
+  right: 0
+}
+
+
+/* 清晰度控制 */
+
+#ClarityController {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ClarityController span {
+  width: 60px;
+  height: 23px;
+  line-height: 23px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+#ClarityController ul {
+  display: none;
+  transform: translate3d(0, -100%, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid white;
+}
+
+#ClarityController li.active {
+  color: red;
+}
+
+
+/* 倍速 */
+
+#speed-controller {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#speed-controller span {
+  width: 60px;
+  height: 23px;
+  line-height: 23px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+#speed-controller ul {
+  display: none;
+  transform: translate3d(0, -100%, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid white;
+}
+
+#ClarityController li.active {
+  color: red;
+}
+
+
+/* 收藏 */
+
+#fav {
+  width: 20px;
+  height: 20px;
+  background: url('/img/fav.png') center/cover no-repeat;
+}
+
+
+/* 音量 */
+
+#volume {
+  width: 20px;
+  height: 20px;
+  background: url('/img/volume.png') center/cover no-repeat;
+}
+
+
+/* 全屏 */
+
+#full-screen {
+  width: 20px;
+  height: 20px;
+  background: url('/img/full.png') center/cover no-repeat;
+}
+
+
+/* 弹幕 */
+
+#BarrageController {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 50px);
+  color: white;
+}
+
+#BarrageController li {
+  position: absolute;
+  animation: move 10s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-960px, 0, 0);
+  }
+}
+
+
+/* 音量 */
+
+#VolumeController {
+  width: 300px;
+  border: 1px solid #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#VolumeController #v-current {
+  width: 80%;
+  height: 5px;
+  background: white;
+}
+
+#indicator {
+  position: absolute;
+  left: 80%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: black;
+}
+
+
+/* 播放暂停按钮 */
+
+#play-pause {
+  margin-left: 12px;
+  width: 36px;
+  height: 36px;
+  background: url('/img/play.png') center/cover no-repeat;
+}
+
+#play-pause.active {
+  background: url('/img/pause.png') center/cover no-repeat;
+}
+
+#cart {
+  flex-basis: 600px;
+}
+
+
+/* 播放进度条 */
+
+#progress-controller {
+  width: 100%;
+  height: 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: rgba(255, 255, 255, 0.0);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#progress-controller .p-current {
+  transition: none;
+  width: 50%;
+  height: 3px;
+  background: #a3c9fb;
+}
+
+#progress-controller .indicator {
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  right: -2px;
+  top: -1px;
+  border-radius: 50%;
+  background: #5f6eec;
+}
+
+#time-lable {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 103px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
